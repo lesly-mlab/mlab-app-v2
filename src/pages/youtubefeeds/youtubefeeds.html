@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Youtube Feeds</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor = "let video of videos" (click)="viewVideo(video)">
+  <img [src] = "video.snippet.thumbnails.high.url" />
+    <ion-card-content>
+      <ion-card-title>
+        {{video.snippet.title}}
+      </ion-card-title>
+      <p>{{video.snippet.description}}</p>
+      <!-- <iframe  [src] ="video.id.videoId" width="560" height="100%" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+    </ion-card-content>
+  </ion-card>
+</ion-content>

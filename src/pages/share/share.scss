@@ -1,0 +1,24 @@
+page-share {
+
+    .input-style {
+        border-width: 1px;
+        border-color: #e0e0e0;
+        border-style: solid;
+        height: 40px;
+        padding: 10px;
+        // width: 100%;
+        // margin-bottom: 10px;
+        flex: 1;
+        position: relative;
+    }
+
+    .add{
+        width: 100%;
+        display: flex;
+    }
+
+    #icon-style{
+        font-size: 2em;
+        padding: 10px;
+    }
+}

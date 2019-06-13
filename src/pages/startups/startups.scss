@@ -1,0 +1,33 @@
+page-startups {
+    #feature {
+        height: 200px;
+        background-color: #efefef;
+        // background-image: url('https://www.mlab.co.za/wp-content/uploads/2018/01/image4.jpg');
+        background-size: cover;
+        background-position: center center;
+        border: none;
+    }
+
+    ion-badge {
+        margin-left: 10px;
+        font-size: 0.8em;
+    }
+
+    #empty {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+
+    /*.location {
+      display: block;
+      font-size: 0.7em !important;
+      font-weight: 400;
+    }*/
+}

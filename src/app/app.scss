@@ -1,0 +1,108 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.profile-image {
+    // border-radius: 50%;
+    background: #ffffff;
+    width: 100%;
+    display: block;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    img {
+        // height: 100%;
+        // border-radius: 50%;
+    }
+}
+
+.center-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-item {
+    width: 150px;
+    height: 120px;
+    ion-icon {
+        color: #c6d3d3;
+        font-size: 4.5em;
+        margin-bottom: 20px;
+    }
+
+    span {
+        font-size: 1em;
+        // font-weight: 100;
+        color: #c6d3d3;
+    }
+}
+
+.my-emojis {
+    padding-top: 10px;
+    background-color: #023638;
+}
+
+.social {
+    background-color: #1da1f2;
+    padding-top: 10px;
+}
+
+.my-settings {
+    padding-top: 10px;
+    background-color: #00686d;
+}
+
+.my-profile {
+    padding-top: 10px;
+    background-color: map-get($colors, dark-red);
+}
+
+.logout {
+    padding-top: 10px;
+    // position: absolute;
+    // bottom: 0;
+}
+
+.menu-background {
+    background: #628e28;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error {
+    color: red;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

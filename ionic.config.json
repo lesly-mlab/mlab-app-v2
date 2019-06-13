@@ -1,0 +1,7 @@
+{
+  "name": "mLab",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

@@ -1,0 +1,17 @@
+page-youtube-play {
+    .bg {
+        background: black !important;
+        position: absolute !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        bottom: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    iframe {
+        width: 100% !important;
+    }
+}

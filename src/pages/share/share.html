@@ -1,0 +1,33 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Share</ion-title>
+</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="form">
+    <div class="add" style= "margin-bottom: 10px;">
+      <input #input class="input-style" [(ngModel)]="recipient" placeholder="To:" formControlName="email" />
+      <ion-icon item-right id="icon-style" name="add" color="primary" (click)="addPerson(input)"></ion-icon>
+    </div>
+  </form>
+
+
+  <ion-list>
+    <div class="add" *ngFor="let recipient of recipients; let i = index">
+      <button style="flex: 1;" ion-item  >
+        {{ recipient }}
+      </button>  
+      <ion-icon  item-right id="icon-style" name="close" color="danger" (click)="removePerson(i)"></ion-icon>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer padding no-border>
+  <button ion-button block outline (click)="share()">Share</button>
+</ion-footer>
+
+<loader [promise]="promise" progress="Sending Reports" success="Reports sent"></loader>

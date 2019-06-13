@@ -1,0 +1,120 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+    <ion-navbar color="primary">
+        <ion-title></ion-title>
+        <ion-buttons end *ngIf="otherUser == false"><button ion-button (click)="editProfile()" icon-only><ion-icon name="create"></ion-icon></button></ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+        <div class="header" padding *ngIf="user">
+            <div id="profile-pic">
+                <div id="bg1"></div>
+                <div id="bg2"></div>
+                <img src="assets/imgs/avatar.png" class="center" clickable style="border: 4px solid #fafafa; border-radius: 50%;"
+                   />
+                </div>
+                <p class="header-title">
+                    {{user?.name}}
+                </p>
+                <p class="header-subtitle">
+                    <span id="role">{{user?.role}}</span> <span id="organization">{{user?.organization.name}}</span><br />
+                    <span id="email">{{user?.username}}</span>
+                </p>
+            </div>
+        <div class="header">
+            <div class="about">{{user?.about}}</div>
+        </div>
+
+        <div *ngIf="user">
+            <div class="profile-item">
+                <div class="icon">
+                    <ion-icon name="calendar"></ion-icon>
+                </div>
+                <div class="info">
+                    <span class="title">Date of Birth</span>
+                    <span class="value">{{user?.dob | amDateFormat:'MMMM DD, YYYY'}}</span>
+                </div>
+            </div>
+
+            <div class="profile-item">
+                <div class="icon">
+                    <ion-icon name="mail"></ion-icon>
+                </div>
+                <div class="info">
+                    <span class="title">Email</span>
+                    <span class="value">{{user?.username}}</span>
+                </div>
+            </div>
+
+            <div class="profile-item">
+                <div class="icon">
+                    <ion-icon name="call"></ion-icon>
+                </div>
+                <div class="info">
+                    <span class="title">Phone</span>
+                    <span class="value">{{user?.phone}}</span>
+                </div>
+            </div>
+
+            <div class="profile-item">
+                <div class="icon">
+                    <ion-icon name="person"></ion-icon>
+                </div>
+                <div class="info">
+                    <span class="title">Gender</span>
+                    <span class="value">{{user?.gender?.name}}</span>
+                </div>
+            </div>
+
+            <div class="profile-item">
+                <div class="icon">
+                    <ion-icon name="people"></ion-icon>
+                </div>
+                <div class="info">
+                    <span class="title">Enthicity</span>
+                    <span class="value">{{user?.ethnicity?.name}}</span>
+                </div>
+            </div>   
+        </div>
+    <!-- <div *ngIf="user" style="margin-top: 20px" padding>
+        <label style="color:#94dc2d">Email</label>
+        <input readonly class="input-style" placeholder="email" value="{{user?.username}}" />
+
+        <label style="color:#94dc2d">Name</label>
+        <input readonly class="input-style" placeholder="Name" value="{{user?.name}}"/>
+        
+        <label style="color:#94dc2d">Cellphone Number</label>
+        <input readonly class="input-style" placeholder="cellphone Number" value="{{user?.phone}}" />
+
+        <label style="color:#94dc2d">organization</label>
+        <input readonly class="input-style" placeholder="Organization" value="{{user?.organization.name}}"/>
+
+        <label style="color:#94dc2d">Role</label>
+        <input readonly class="input-style" placeholder="Role" value="{{user?.role}}"/>
+
+        <label style="color:#94dc2d">Date Of Birth</label>
+        <input readonly class="input-style" placeholder="Date Of Birth" value="{{user?.dob}}"/>
+
+        <label style="color:#94dc2d">Ethnicity</label>
+        <input readonly class="input-style" placeholder="Ethnicity" value="{{user?.ethnicity?.name}}"/>
+
+        <label style="color:#94dc2d">Gender</label>
+        <input readonly class="input-style" placeholder="Gender" value="{{user?.gender?.name}}"/>
+
+        <label style="color:#94dc2d">About</label>
+        <input readonly class="input-style" placeholder="About" value="{{user?.about}}"/>
+    </div> -->
+    
+</ion-content>
+
+<!-- <ion-footer padding no-border>
+    <button ion-button block round outline (click)="editProfile()">Edit Profile</button>
+</ion-footer> -->
+
+<loader [promise]="promise" dialog="false"></loader>

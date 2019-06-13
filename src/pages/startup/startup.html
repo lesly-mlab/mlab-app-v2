@@ -1,0 +1,45 @@
+<!--
+  Generated template for the StartupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Startup Profile</ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button icon-only [navPush]="membersPage" [navParams]="{startup: startup}"><ion-icon name="people"></ion-icon></button>
+    </ion-buttons> -->
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="header">
+    <div id="img-holder">
+      <img id="profile" [ngStyle]="{'background-image': 'url(' + startup.cover + ')'}"/>
+      <div id="shader"></div>
+    </div>
+
+    <div class="links">
+        <button (click)="showLink(startup.website)" color="dark" ion-button clear icon-only [disabled]="!startup.website"><ion-icon name="md-globe"></ion-icon></button>
+        <button (click)="showLink(startup.android)" color="dark" ion-button clear icon-only [disabled]="!startup.android"><ion-icon name="logo-android"></ion-icon></button>
+        <button (click)="showLink(startup.ios)" color="dark" ion-button clear icon-only [disabled]="!startup.ios"><ion-icon name="logo-apple"></ion-icon></button>
+      </div>
+    <div padding>
+
+          <h2>{{startup.name}}<span class="location">{{startup.locationName}}</span></h2>
+  <!-- <p class="description">
+    Phone: {{startup.phone}}<br/>
+    Email: <a href="mailto:{{startup.email}}">{{startup.email}}</a>
+  </p> -->
+  <p class="description">{{startup.description}}</p>
+</div>
+</div>
+</ion-content>
+
+<ion-footer no-border padding>
+    <button ion-button block outline [navPush]="membersPage" [navParams]="{startup: startup}">Members</button>
+  </ion-footer>

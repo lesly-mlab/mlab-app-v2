@@ -1,0 +1,35 @@
+page-innovation {
+    .description {
+        font-size: 1.2em;
+        text-align: justify;
+        font-weight: 100;
+    }
+
+    .header {
+        // display: flex;
+        // flex-direction: column;
+        // align-items: center;
+
+        #img-holder {
+            position: relative;
+            padding: 10px;
+        }
+
+        h2 {
+            // margin-left: 10px;
+            font-weight: 100;
+        }
+        
+        img {
+            width: 100%;
+            height: 200px;
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            // background-image: url('https://www.mlab.co.za/wp-content/uploads/2018/01/image4.jpg');
+            background-size: cover;
+            background-color: #efefef;
+            background-position: center center;
+        }
+    }
+}

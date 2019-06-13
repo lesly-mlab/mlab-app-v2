@@ -1,0 +1,11 @@
+{
+    "android": {
+        "release": {
+            "keystore": "keystore.keystore",
+            "storePassword": "mlabsa",
+            "alias": "mlabsa",
+            "password" : "mlabsa",
+            "keystoreType": ""
+        }
+    }
+}

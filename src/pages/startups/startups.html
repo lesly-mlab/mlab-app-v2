@@ -1,0 +1,57 @@
+<!--
+  Generated template for the StartupsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Startups</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar color="primary" no-border-top>
+    <ion-segment color="white" [(ngModel)]="filter">
+      <ion-segment-button color="white" value="current" (ionSelect)="filtered('current')">
+        Current <ion-badge color="primary-dark">{{allstartups.length - alumniCount}}</ion-badge>
+      </ion-segment-button>
+      <ion-segment-button color="white" value="alumni" (ionSelect)="filtered('alumni')">
+        Alumni <ion-badge color="primary-dark">{{alumniCount}}</ion-badge>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  <!-- <ion-list>
+    <button ion-item *ngFor="let startup of startups" (click)="viewStartup(startup)">
+      <h2>{{startup.name}}</h2>
+      <p>{{startup.description}}</p>
+    </button>
+  </ion-list> -->
+
+  <ion-list >
+  <ion-card *ngFor="let startup of startups" (click)="viewStartup(startup)">
+      <img id="feature" [ngStyle]="{'background-image': 'url(' + (startup.cover ? startup.cover : '../assets/imgs/placeholder.jpg') + ')'}"/>
+      <ion-card-content>
+        <ion-card-title>
+          {{startup.name}}
+          <!-- <span class="location">{{startup.locationName}}</span> -->
+          </ion-card-title>
+        <p>
+          {{shorten(startup.description)}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+  <div id="empty" *ngIf="startups.length == 0 && !loading">
+      <p>There are currently no startups to show</p>
+    </div>
+
+    <loader [promise]="promise" dialog="false"></loader>
+</ion-content>
+
+<div class="center-center" *ngIf="filter == 'alumni' && startups.length == 0">There are currently no Alumni</div>

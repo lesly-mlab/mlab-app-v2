@@ -1,0 +1,35 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+  
+  
+  <ion-content padding class="background">
+    <div id="logo">
+      <img src="assets/imgs/mlab-logo.png" />
+    </div>
+
+    <form [formGroup]="form" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Email<br><span class="error" *ngIf="form.get('email').hasError('required') && form.get('email').touched">Please enter a valid email</span></ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label floating>Password<br><span class="error" *ngIf="form.get('password').hasError('required') && form.get('password').touched">Please enter a password</span></ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>
+  
+    <button (click)="login()" ion-button block color="secondary" style="margin-bottom: 10px">Login</button>
+    </form>
+    <button class="center" style="width: 100%;font-size: 0.7em;" clear (click)="forgotPassword()" ion-button>Forgot Password</button>
+    <!-- <button ion-button clear class="center" (click)="signup()">Sign Up</button>
+    <button ion-button clear class="center" (click)="forgotPassword()">Forgot Password</button> -->
+
+    <button ion-button clear icon-only id="close" color="light" navPop><ion-icon name="close"></ion-icon></button>
+  </ion-content>
+  

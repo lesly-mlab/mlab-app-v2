@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>
+      mLabSA
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="card-background-page">
+  <div *ngIf="stats.startups"> 
+  <ion-card (click)="show('InfographicEnterprisePage', 'startups', stats.startups)">
+    <img src="assets/imgs/startups.jpg"/>
+    <div class="card-title">Enterprise Development</div>
+    <div class="card-subtitle">Lab Support</div>
+    <div class="count">{{stats.startups.total}}</div>
+    <!-- <div class="card-subtitle">{{stats.startups}} Startups</div> -->
+  </ion-card>
+
+  <ion-card (click)="show('InfographicCodetribePage', 'students', stats.students)">
+    <img src="assets/imgs/jobs.jpg"/>
+    <div class="card-title">Skills Development</div>
+    <div class="card-subtitle">Codetribe</div>
+    <div class="count">{{stats.students.total}}</div>
+
+    <!-- <div class="card-subtitle">{{stats.jobs}} Job(s)</div> -->
+  </ion-card>
+
+  <ion-card (click)="show('InnovationsPage')">
+    <img src="assets/imgs/students.jpg"/>
+    <div class="card-title">Innovation Management</div>
+    <div class="card-subtitle">Projects</div>
+    <div class="count">{{stats.innovations}}</div>
+  </ion-card>
+  </div>
+</ion-content>
+
+<ion-footer padding *ngIf="!loggedIn">
+  <button ion-button block (click)="login()" color="primary-dark">Login</button>
+</ion-footer>
+
+<loader [promise]="promise" dialog="false"></loader>
+

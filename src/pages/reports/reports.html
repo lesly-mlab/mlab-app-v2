@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <ion-title>
+      Reports
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="background">
+  <div id="startups" padding-left padding-top *ngIf="startups?.length > 0">Featured Startups</div>
+    <div class="startups" *ngIf="startups?.length > 0">
+      <ion-slides pager autoplay="4000" speed="500" loop="true">
+        <ion-slide *ngFor="let startup of startups" (click)="showStartup(startup)">
+            <div class="startup" [ngStyle]="{'background-image': 'url(' + startup.cover + ')'}">
+              <div class="darken">
+                <span class="name">{{startup.name}}</span>
+              </div>
+              
+            </div>
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+    <div id="reports" padding-left *ngIf="reports?.length > 0">Reports</div>
+    <ion-card *ngFor="let report of reports">
+        <ion-card-content>
+            <ion-card-title>
+                {{report.name}}
+              </ion-card-title>
+            <p id="description">
+                {{report.description}}
+            </p>
+            <p class="time" style="text-align: right">{{report.created | amDateFormat:'dddd, Do MMMM YYYY'}}</p>
+          </ion-card-content>
+          <ion-row>
+              <ion-col item-end>
+                <button color="primary-dark" ion-button clear small (click)="download(report)">
+                  <div>Download</div>
+                </button>
+                <button color="primary-dark" ion-button clear small (click)="share(report)">
+                  <div>Share</div>
+                </button>
+              </ion-col> 
+
+              <!-- <ion-col>
+                  <button color="primary-dark" ion-button clear small (click)="bookmark()">
+                    <div>Bookmark</div>
+                  </button>
+                </ion-col>  -->
+            </ion-row>
+      </ion-card>
+      <a #downloadLink id='dwnldLnk' download='report' style="display:none;" ></a>
+
+    </ion-content>
+
+<loader [promise]="promise" dialog="false" emptyMessage="There are currently no reports assigned to you"></loader>
+<loader [promise]="downloadPromise" progress="Downloading report"></loader>

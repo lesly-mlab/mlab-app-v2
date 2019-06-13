@@ -1,0 +1,74 @@
+<!--
+  Generated template for the EditProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+      <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form [formGroup]="form"> 
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Name<br><span class="error" *ngIf="form.get('name').hasError('required') && form.get('name').touched">Please enter a valid name</span></ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+            
+        <ion-item>
+          <ion-label floating>Email<br><span class="error" *ngIf="form.get('username').hasError('username') && form.get('username').touched">Please enter a valid email</span></ion-label>
+          <ion-input type="text" formControlName="username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Cellphone Number <br><span class="error" *ngIf="form.get('phone').hasError('required') && form.get('phone').touched">Please enter a valid cellphone number</span></ion-label>
+            <ion-input type="number" formControlName="phone"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label floating>About <br><span class="error" *ngIf="form.get('about').hasError('required') && form.get('about').touched">Please enter someting about you</span></ion-label>
+              <ion-input type="text" formControlName="about"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label floating>
+                Gender
+              </ion-label>
+              <ion-select formControlName="genderId">
+                <ion-option value="9e257a067ae27ab8">Male</ion-option>
+                <ion-option value="9e2aa7c5a3a4d8c1">Female</ion-option>
+                <ion-option value="d64f3ddb30f899be">Other</ion-option>
+              </ion-select>
+            </ion-item>
+
+            <ion-item>
+              <ion-label floating>Date Of Birth</ion-label>
+              <ion-datetime displayFormat="YYYY-MM-DD" pickerFormat="DD MMM YYYY" formControlName="dob" ></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+              <ion-label floating>Ethnicity</ion-label>
+              <ion-select formControlName="ethnicityId">
+                  <ion-option value="544ea664c5f359af">African</ion-option>
+                  <ion-option value="c4c58e871d029b38">Caucasian</ion-option>
+                  <ion-option value="bdb6f5b0acaed8f6">Indian</ion-option>
+                  <ion-option value="94a191d01e3d19e4">Coloured</ion-option>
+                  <ion-option value="f902ea9b82f2a891">Asian</ion-option>
+                  <ion-option value="bf78c15a70055a29">Other</ion-option>
+              </ion-select>
+             
+            </ion-item>
+
+            
+      </ion-list>
+    </form>
+</ion-content>
+<ion-footer padding no-border>
+    <button style="margin-bottom: 10px" ion-button color="danger" block outline (click)="changePassword()">Change Password</button>
+    <button ion-button block (click)="save()">Save</button>
+  </ion-footer>
+<!-- <loader progress="Updating.." [promise]="promise"></loader> -->

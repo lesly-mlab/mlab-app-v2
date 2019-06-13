@@ -1,0 +1,78 @@
+page-reports {
+    .background {
+        background: #e8e8e8;
+    }
+
+    .startups {
+        padding: 10px;
+        padding-bottom: 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    ion-slides {
+        margin-bottom: 0px;
+    }
+
+    .startup {
+        width: 100%;
+        height: 200px;
+        background: black;
+        color: white;
+        padding: 15px;
+        font-size: 0.8em;
+        margin-bottom: 35px;
+        font-weight: 400;
+        text-align: center;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+
+        .darken {
+            background: rgba(0,0,0, 0.5);
+            position: absolute;
+            left: 0;
+            right: 0;
+            // top: 0;
+            bottom: 0;
+            padding: 10px;
+        }
+
+        .name {
+            z-index: 5;
+            font-weight: bold;
+        }
+    }
+
+    .card-md {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    ion-card {
+        position: relative;
+    }
+
+    .time {
+        color: #c0c0c0;
+        font-size: 0.8em;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+
+    ion-card-title {
+        padding-top: 10px !important;
+        font-size: 1.5em !important;
+        color: #101010 !important;
+        font-weight: 100 !important;
+    }
+
+    #description {
+        font-weight: 100 !important;
+    }
+}

@@ -1,0 +1,40 @@
+<ion-menu [content]="content" type="overlay" class="menu" *ngIf="loggedIn" type="push">
+    <ion-content class="menu-background">
+        <div class="profile-image"> 
+          <img src="assets/imgs/mlab-logo.png" />
+        </div>
+        <div class="menu-item my-profile" (click)="profile()" menuClose>
+            <ion-icon name="person"></ion-icon>
+            <span>Profile</span>
+          </div>
+
+        <div class="menu-item my-settings" (click)="members()" menuClose>
+            <ion-icon name="people"></ion-icon>
+            <span>Startups</span>
+          </div>
+
+        <div class="menu-item my-emojis" (click)="programmes()" menuClose>
+          <ion-icon name="jet"></ion-icon>
+          
+          <span>Programmes</span>
+        </div>
+
+        <div class="menu-item social" (click)="social()" menuClose>
+          <ion-icon name="paper"></ion-icon>
+          <span>Social Feed</span>
+        </div>
+
+        <div class="menu-item my-settings" (click)="notifications()" menuClose>
+          <ion-icon name="notifications"></ion-icon>
+          <span>Notifications</span>
+        </div>
+
+  
+        <div class="menu-item logout" (click)="logout()" menuClose>
+          <ion-icon name="exit"></ion-icon>
+          <span>Logout</span>
+        </div>
+    </ion-content>
+  </ion-menu>
+
+  <ion-nav #content [root]="rootPage"></ion-nav>

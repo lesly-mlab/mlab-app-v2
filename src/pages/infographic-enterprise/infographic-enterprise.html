@@ -1,0 +1,133 @@
+<!--
+  Generated template for the InfographicEnterprisePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Enterprise Development</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h4>Startups</h4>
+  <div class="holder">
+    <div class="box first" (click)="viewStartups('current')">
+      <span class="title">Current</span>
+      <span class="value">{{startups.current}}</span>
+      <i class="fa fa-rocket" aria-hidden="true"></i>
+    </div>
+
+    <div class="box second" (click)="viewStartups('alumni')">
+      <span class="title">Alumni</span>
+      <span class="value">{{startups.alumni}}</span>
+      <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="holder">
+  <div class="box fifth">
+    <span class="title">Founders</span>
+    <span class="value">6</span>
+    <i class="fa fa-user-friends" aria-hidden="true"></i>
+  </div>
+</div>
+
+<div class="holder" style="margin-top: 20px">
+  <div class="box male">
+    <span class="title">Male</span>
+    <span class="value">60%</span>
+    <i class="fa fa-male" aria-hidden="true"></i>
+  </div>
+
+  <div class="box female">
+    <span class="title">Female</span>
+    <span class="value">40%</span>
+    <i class="fa fa-female" aria-hidden="true"></i>
+  </div>
+</div>
+
+<div class="holder">
+  <div class="box fifth">
+    <span class="title">Total Jobs</span>
+    <span class="value">6</span>
+    <i class="fa fa-user-friends" aria-hidden="true"></i>
+  </div>
+</div>
+
+  <div class="holder" style="margin-top: 20px">
+      <div class="box first">
+        <span class="title">Full Time</span>
+        <span class="value">{{startups.youth}}%</span>
+        <i class="fa fa-child" aria-hidden="true"></i>
+      </div>
+  
+      <div class="box second">
+        <span class="title">Part Time</span>
+        <span class="value">{{startups.black}}%</span>
+        <i class="fa fa-user-friends" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <ion-row>
+      <ion-col col-6>
+          <chart type="pie" [data]="data1" [options]="options"></chart>
+      </ion-col>
+      <ion-col col-6>
+          <chart type="pie" [data]="data2" [options]="options"></chart>
+      </ion-col>
+    </ion-row>
+    <!-- <div class="holder">
+      
+      <div class="box">
+          <chart type="pie" [data]="data1"></chart>
+      </div>
+
+      <div class="box">
+        <chart type="pie" [data]="data2"></chart>
+      </div>
+    </div> -->
+
+
+    <h4>Funds</h4>
+    <div class="holder">
+      <div class="box first">
+        <span class="title">Revenue</span>
+        <span class="value">R1.05m</span>
+        <i class="fa fa-dollar-sign" aria-hidden="true"></i>
+      </div>
+  
+      <div class="box second">
+        <span class="title">Leveraged</span>
+        <span class="value">R4.5m</span>
+        <i class="fa fa-hand-holding-usd" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <!-- <div id="chartContainer3" style="height: 200px; width: 100%; margin-top: 20px; pointer-events: none"></div>
+
+    <h4>Jobs - Part Time</h4>
+    <div class="holder">
+      <div class="box third">
+        <span class="title">Youth</span>
+        <span class="value">{{startups.jobs.parttime.youth}}%</span>
+        <i class="fa fa-child" aria-hidden="true"></i>
+      </div>
+  
+      <div class="box fourth">
+        <span class="title">Black</span>
+        <span class="value">{{startups.jobs.parttime.black}}%</span>
+        <i class="fa fa-user-friends" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div id="chartContainer4" style="height: 200px; width: 100%; margin-top: 20px; pointer-events: none"></div> -->
+  </ion-content>
+
+  <ion-footer padding>
+    <button ion-button block color="primary-dark" (click)="viewStartups()">View Startups</button>
+  </ion-footer>
